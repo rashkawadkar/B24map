@@ -15,3 +15,42 @@
       </div>
     </div>
   </div>
+<h1>PayUMoney Payment Request Form </h1>
+<%= form_tag("https://test.payu.in/_payment") %>
+
+   <input type="hidden" name="key" value="mdxF6zzs" />
+   <input type="hidden" name="hash" value="<%= @hash_value %>"/>
+   <input type="hidden" name="txnid" value="7121298" />
+   <table>
+      <tr>
+         <td><b>Mandatory Parameters</b></td>
+      </tr>
+      <tr>
+         <td>Amount: </td>
+         <td><input name="amount" value="100.00" /></td>
+         <td>First Name: </td>
+         <td><input name="firstname" id="firstname" value="kamlesh" /></td>
+      </tr>
+      <tr>
+         <td>Email: </td>
+         <td><input name="email" id="email" value="rash.kawadkar@hotmail.com"  /></td>
+         <td>Phone: </td>
+         <td><input name="phone" value="9975445510" /></td>
+      </tr>
+      <tr>
+         <td>Product Info: </td>
+         <td colspan="3"><textarea name="productinfo"></textarea></td>
+      </tr>
+      <tr>
+         <td>Success URI: </td>
+         <td colspan="3"><input name="surl"  size="64" value="https://www.google.co.in" /></td>
+      </tr>
+      <tr>
+         <td>Failure URI: </td>
+         <td colspan="3"><input name="furl"  size="64" value="https://www.google.co.in" /></td>
+      </tr>
+      <tr>
+         <td colspan="3"><input type="hidden" name="service_provider" value="payu_paisa" /></td>
+      </tr>
+   </table>
+<%= submit_tag 'Pay', class: 'btn btn-default save-changes' %>
